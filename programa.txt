@@ -1,0 +1,3 @@
+entero hola = 5;
+entero adios = 10;
+cadena hola;

@@ -1,0 +1,39 @@
+<programa>			::- <instrucciones>
+
+<instrucciones>		::- <instruccion><instrucciones> | <instruccion>
+
+<instruccion>		::- <declaracion> | <asignacion> | <estructura> | <operacion>
+
+<declaracion>		::- <tipo> <identificador> <delimitador> | <tipo><asignacion>
+
+<identificador>		::- <entero><identificador> | <cadena><identificador> | <entero> | <cadena>
+<entero>			::- <digito><entero> | <digito>
+<cadena>			::- <caracter><cadena> | <caracter>
+
+<asignacion>		::- <identificador> = <asignador> <delimitador>
+<asignador>         ::- '<cadenaTexto>' | <entero>
+<cadenaTexto>       ::- <caracteres><cadenaTexto> | <caracteres>
+<caracteres>        ::- <caracter> | <simboloOperacion> | <digito>
+
+<operacion>			::- <entero> <simboloOperacion> <operacion> | <entero>
+
+<estructura>		::- <if> | <for>
+
+<if>				::- 'if('<condicion>'){'<instrucciones>'}'
+<condicion>			::- <condicionEvaluar><simboloCondicion><condicionEvaluar>
+<condicionEvaluar>	::- <identificador> | <cadenaTexto> | <entero>
+
+<for>				::- 'for('<forDeclaracion><delimitador><forCondicion><delimitador><forAumento>'){'<instrucciones>'}'
+<forDeclaracion>    ::- <identificador> | <declaracion>
+<forCondicion>      ::- <condicion>
+<condicionCrecimiento> ::- <identificador><simboloAumento>
+
+
+
+<delimitador>		::- ';'
+<simboloAumento>	::- '++' | '--'
+<simboloOperacion>	::- '+' | '-' | '/' | '*'
+<simboloCondicion>	::- '==' | '<=' | '>=' | '<' | '>'
+<tipo>				::- 'entero' | 'cadena'
+<digito>			::- 0|1|2|3|4|5|6|7|8|9
+<caracter>			::- a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z
